@@ -11,7 +11,8 @@ describe(':Man', function()
       clear()
       command('syntax on')
       command('set filetype=man')
-      command('syntax off')  -- Ignore syntax groups
+      command('syntax off')  -- Ignore syntax groups.
+      command('unlet! b:man_pager') -- Allow  man#init_pager to rerun.
       screen = Screen.new(52, 5)
       screen:set_default_attr_ids({
         b = { bold = true },
